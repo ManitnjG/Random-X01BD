@@ -15,7 +15,7 @@ env:
     OUTPUT: S*.zip
     CLO: X01BD:ccache
     CLO_1: ENCRYPTED[e5ca6e7b3cc6acc789ceca3ec66474257eed56f88072683e09d0988ab4235dca898577aec638b43fd0c0b9242f0ecfb1]
-    URI: 
+    URI: https://abdullah.al-noman.workers.dev/0:/ccache.tar.gz
     ROM_U: 1
 task:
   name: "Setting Up, Syncing, Building and Uploading..."
