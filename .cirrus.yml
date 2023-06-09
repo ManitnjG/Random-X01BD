@@ -1,5 +1,5 @@
 env:
-    MANIFEST: https://github.com/Spark-Rom/manifest -b pyro
+    MANIFEST: https://github.com/Evolution-X/manifest -b tiramisu
     DEVICE: X01BD 
     OEM: asus
     DT_LINK: https://github.com/RT1648/android_device_asus_X01BD.git
@@ -11,12 +11,12 @@ env:
     KT_LINK: https://github.com/RT1648/android_kernel_asus_sdm660.git
     KT_PATH: kernel/asus/sdm660
     EXTRA_CMD: export WITH_GAPPS=true
-    LUNCH_COMBO: spark_${DEVICE}--userdebug
-    OUTPUT: S*.zip
+    LUNCH_COMBO: evolution_${DEVICE}-userdebug
+    OUTPUT: E*.zip
     CLO: X01BD:ccache
     CLO_1: ENCRYPTED[e5ca6e7b3cc6acc789ceca3ec66474257eed56f88072683e09d0988ab4235dca898577aec638b43fd0c0b9242f0ecfb1]
     URI: https://abdullah.al-noman.workers.dev/0:/ccache.tar.gz
-    ROM_U: 1
+    ROM_U: 0
 task:
   name: "Setting Up, Syncing, Building and Uploading..."
   timeout_in: 120m
