@@ -1,0 +1,29 @@
+name: Commit push
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  build:
+    if: github.event.repository.owner.id == github.event.sender.id
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: write
+    steps:
+    - name: Check Out
+      uses: actions/checkout@v3
+    - name: Display Run Parameters
+      run: |
+        rm config.sh
+        echo "#!/bin/bash" >> config.sh
+        echo "export RANDOM=${RANDOM}" >> config.sh
+        echo  "::endgroup::"
+        cat config.sh
+
+    - name: Commit & Push changes
+      uses: actions-js/push@master
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        author_email: 'ci.twrp@gmail.com'
+        author_name: 'RecoveryBuilder'
+        message: 'RecoveryBuilder: Trigger Build'

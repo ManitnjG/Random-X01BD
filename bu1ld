@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd ~/work
+. build/envsetup.sh
+export CCACHE_DIR=/tmp/ccache
+export CCACHE_EXEC=$(which ccache)
+export USE_CCACHE=1
+ccache -M 100G
+ccache -o compression=true
+ccache -z
+lunch "$LUNCH_COMBO"
+$EXTRA_CMD
+mka bacon -j8 

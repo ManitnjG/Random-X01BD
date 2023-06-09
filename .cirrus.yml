@@ -1,0 +1,38 @@
+env:
+    MANIFEST: https://github.com/Spark-Rom/manifest -b pyro
+    DEVICE: X01BD 
+    OEM: asus
+    DT_LINK: https://github.com/RT1648/android_device_asus_X01BD.git
+    DT_PATH: device/asus/X01BD
+    VT_LINK: https://github.com/RT1648/proprietary_vendor_asus.git
+    VT_PATH: vendor/asus
+    CT_LINK: https://github.com/RT1648/android_device_asus_sdm660-common.git
+    CT_PATH: device/asus/sdm660-common
+    KT_LINK: https://github.com/RT1648/android_kernel_asus_sdm660.git
+    KT_PATH: kernel/asus/sdm660
+    EXTRA_CMD: export WITH_GAPPS=true
+    LUNCH_COMBO: spark_${DEVICE}--userdebug
+    OUTPUT: S*.zip
+    CLO: X01BD
+    CLO_1: 
+    URI: 
+    ROM_U: 1
+task:
+  name: "Setting Up, Syncing, Building and Uploading..."
+  timeout_in: 120m
+  container:
+      image: ghcr.io/sushrut1101/docker:arch
+      cpu: 8
+      memory: 32G
+
+  Storage-Checker_script:
+      - sh d0wnl0ad
+
+  Sync_script:
+      - sh syn0
+
+  Build_script:
+      - sh bu1ld
+
+  upload_script:
+      - sh upl0ad
