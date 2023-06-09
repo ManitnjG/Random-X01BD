@@ -8,4 +8,3 @@ git clone $VT_LINK $VT_PATH
 git clone $CT_LINK $CT_PATH
 git clone $KT_LINK $KT_PATH
 echo "Sync Done"
-echo "Now Build Will Begin"
